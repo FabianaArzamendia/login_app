@@ -1,0 +1,60 @@
+<div class="register">
+    <form class="custom-form" #form="ngForm" (ngSubmit)="Validatedate(form)">
+        <h1>Register</h1>
+
+        <input type="email"
+        [(ngModel)]="email"
+        name="email"
+        placeholder="Email"      
+        #mailInputRegister="ngModel"
+        required="email"
+        />
+        <div *ngIf="mailInputRegister.errors?.['required'] && mailInputRegister.touched" style="color:red;">
+            Email is required*.
+        </div>
+
+        <input type="password"
+        [(ngModel)]="password"
+        name="password"
+        placeholder="Password"
+        required="password"
+        #passwordInputRegister="ngModel"/>
+
+        <div *ngIf="passwordInputRegister.errors?.['required'] && passwordInputRegister.touched" style="color:red;">
+            Password is required*.
+        </div>
+            
+        
+        <input type="password"
+        [(ngModel)]="confirmPassword"
+        name="password"
+        placeholder="Repeat the password"
+        required="password"
+        #confirPassInput ="ngModel"
+        />
+
+        <button type="submit" (click)="register_User()" [disabled]="form.invalid">Register</button>
+
+
+    </form>
+
+<div style="position:absolute;left: 60%;top: 25%;
+  border: 1px solid #3298dc;margin:2rem;padding: 10px;">
+    <h3 style="font-style: italic;text-align: center;">Lorem Ipsum</h3>
+    <p>
+        "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
+        "No hay nadie que ame el dolor mismo, que lo busque, lo encuentre y lo quiera, simplemente porque es el dolor
+    </p>
+
+    <p>
+        "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
+        "No hay nadie que ame el dolor mismo, que lo busque, lo encuentre y lo quiera, simplemente porque es el dolor
+    </p>
+
+    <p>
+        "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
+        "No hay nadie que ame el dolor mismo, que lo busque, lo encuentre y lo quiera, simplemente porque es el dolor
+    </p>
+</div>
+
+</div>

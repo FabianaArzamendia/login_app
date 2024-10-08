@@ -1,0 +1,14 @@
+.zoom{
+    transition: transform .5s;
+
+}
+
+
+.zoom:hover{
+    transform: scale(1.5);
+}
+
+.hora_fondo:hover{
+ 
+  color: #3298dc;
+}

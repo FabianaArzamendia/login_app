@@ -1,0 +1,41 @@
+<div class="imagen_login imagen_vista">
+</div>
+
+
+<p class="imaIcon"></p>
+  <div> 
+    <form  class="custom-form " #form="ngForm" (ngSubmit)="Validatedate(form)" >
+      <h1>Log in</h1>   
+      <!--<span class="material-symbols-outlined">
+        account_circle
+      </span>-->      
+       
+      <input  type="email" [(ngModel)]="email" name="email"
+        placeholder="Email"   #emailInput="ngModel"  required ="mail" 
+        /> 
+      <!-- Mensaje de error si el campo está vacío -->
+    <div  *ngIf="emailInput.errors?.['required'] && emailInput.touched" style="color:red;">
+      Email is required *.
+    </div>
+     <!-- Mensaje de error si el formato del correo es incorrecto -->
+     <div *ngIf="emailInput.errors?.['email'] && emailInput.touched">
+      Introduce un correo electrónico válido.
+    </div>    
+    
+     <input class="is-required" type="password" [(ngModel)]="password" name="password"
+       placeholder="Password"  #passwordInput="ngModel" required="password"
+    />
+    <div *ngIf="passwordInput.errors?.['required'] && passwordInput.touched" style="color:red;">
+        Password is required *.
+    </div>
+
+
+
+   
+    
+     <button  type="submit" (click)="login_User()" [disabled]="form.invalid">Login</button>
+
+   </form>
+   
+</div>      
+
